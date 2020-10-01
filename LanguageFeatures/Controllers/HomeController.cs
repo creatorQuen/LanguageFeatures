@@ -259,6 +259,16 @@ namespace LanguageFeatures.Controllers
 
 
 
+
+        }
+
+        // ИСПОЛЬЗОВАНИЕ АСИНХРОННЫХ МЕТОДОВ.
+        // Определение асинхронных методов действий (применение ключевых слов async и await.).
+
+        public async Task<ViewResult> Index()
+        {
+            long? lenght = await MyAsyncMethods.GetPageLength();
+            return View(new string[] { $"Length: {lenght}" });
         }
 
 
