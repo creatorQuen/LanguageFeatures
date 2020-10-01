@@ -232,6 +232,31 @@ namespace LanguageFeatures.Controllers
 
 
 
+            // ИСПОЛЬЗОВАНИЕ АВТОМАТИЧЕСКОГО ВЫВЕДЕНИЯ ТИПА И АНОНИМНЫХ ТИПОВ.
+            // Использование выведения типа.
+            /*
+            var names = new[] { "Kayak", "Lifejacket", "Soccer ball" };
+            return View(names);
+            */
+
+
+
+            // Использование анонимных типов.
+            // Создание анономного типа.
+            /*
+            var product = new[]
+            {
+                new {Name = "Kayak", Price = 275M},
+                new {Name = "Lifejacket", Price = 48.95M},
+                new {Name = "Soccer ball", Price = 19.50M},
+                new {Name = "Corner flag", Price = 34.95M},
+            };
+            return View(product.Select(p => p.Name));
+            // return View(products.Select(p => p.GetType().Name));  - это чтобы вывести имя анонимного типа.
+            */
+
+
+
 
 
         }
