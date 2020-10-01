@@ -258,19 +258,32 @@ namespace LanguageFeatures.Controllers
 
 
 
+            // ПОЛУЧЕНИЕ ИМЕН.
+            // Использование жестко закодированного имени.
 
+            var products = new[]
+            {
+                new { Name = "Kayak", Price = 275M },
+                new { Name = "Lifejacket", Price = 48.95M },
+                new { Name = "Soccer ball", Price = 19.50M },
+                new { Name = "Corner flag", Price = 34.95M  },
 
+            };
+            //// Использование жестко закодированного имени.
+            //return View(products.Select(p => $"Name: {p.Name}, Price: {p.Price}"));
+            return View(products.Select(p => $"{nameof(p.Name)}: {p.Name}, {nameof(p.Price)}: {p.Price}"));
         }
+
 
         // ИСПОЛЬЗОВАНИЕ АСИНХРОННЫХ МЕТОДОВ.
         // Определение асинхронных методов действий (применение ключевых слов async и await.).
-
+        /*
         public async Task<ViewResult> Index()
         {
             long? lenght = await MyAsyncMethods.GetPageLength();
             return View(new string[] { $"Length: {lenght}" });
         }
-
+        */
 
     }
 }
